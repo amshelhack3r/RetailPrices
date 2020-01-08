@@ -4,4 +4,4 @@ A Python/Flask Project.
 
 ## Getting Started
 
-We Just Getting started :)
+We Just Getting started :).
