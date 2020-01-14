@@ -15,5 +15,8 @@ radio = soup.find("input", attrs={"id":"imgs-sld-1"})
 link = radio.find_next_sibling("a")
 image = link.find("img")
 
-print(image.get("data-src"))
+price= soup.find("span", attrs={"class":"-ltr"})
+print(price.string)
+
+# print(image.get("data-src"))
 
