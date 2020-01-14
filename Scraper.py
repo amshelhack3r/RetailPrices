@@ -10,12 +10,14 @@ def getSoup(url):
 
 soup = getSoup(redmi)
 name = soup.find("h1").string
+# scrap image
 #the first radio button
 radio = soup.find("input", attrs={"id":"imgs-sld-1"})
 link = radio.find_next_sibling("a")
 image = link.find("img")
 
-price= soup.find("span", attrs={"class":"-ltr"})
+# scrap the price 
+price= soup.find("span", attrs={"dir":"ltr"})
 print(price.string)
 
 # print(image.get("data-src"))
