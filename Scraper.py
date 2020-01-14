@@ -2,6 +2,10 @@ from bs4 import BeautifulSoup
 import requests
 from phoneinfo import PhoneInfo
 
+import logging
+logging.basicConfig(filename='app.log', filemode='w', format='%(asctime)s - %(message)s', level=logging.INFO)
+
+
 
 class Scraper():
     base_uri = "https://jumia.co.ke/"
@@ -30,6 +34,7 @@ class Scraper():
         gallery = products.find_all("a", limit=10)
         
         for elem in gallery:
+            # logging.info(elem.prettify(formatter="html"))
             link = elem.get("href")
             image = elem.find("img").get("data-src")
             name = elem.find("span", attrs={"class": "name"}).string
